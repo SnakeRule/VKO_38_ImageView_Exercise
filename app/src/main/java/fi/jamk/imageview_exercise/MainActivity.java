@@ -108,27 +108,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean onTouchEvent(MotionEvent event) {
-
-        x1 = event.getRawX();
-
-        switch(event.getAction()) {
-
-            case MotionEvent.ACTION_DOWN :{
-                mVelocityTracker = VelocityTracker.obtain();
-                mVelocityTracker.addMovement(event);
-                x1 = event.getRawX();
-            }
-            break;
-
-            case MotionEvent.ACTION_MOVE: {
-                mVelocityTracker.getXVelocity();
-                x2 = event.getRawX();
-                imageView.setX(imageView.getX() + mVelocityTracker.getXVelocity());
-            }
-            break;
-        }
-
-        /*switch(event.getAction()){
+        switch(event.getAction()){
             case MotionEvent.ACTION_DOWN:
                 x1 = event.getX();
                 break;
@@ -144,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 showImage();
                 break;
-        }*/
+        }
         return false;
     }
 }
